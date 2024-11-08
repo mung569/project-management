@@ -8,7 +8,7 @@
   background-color: #f0f2f5;
 }
 
-.formWrapper form {
+.wrapper form {
   background-color: #fff;
   padding: 2rem;
   border-radius: 8px;
@@ -18,7 +18,7 @@
   text-align: center;
 }
 
-.formWrapper h1 {
+.wrapper h1 {
   font-size: 24px;
   color: #333;
   margin-bottom: 1.5rem;
