@@ -17,7 +17,7 @@ const LoginForm: React.FC = () => {
       <form onSubmit={handleSubmit}>
         <h1 className={styles.login}>Login</h1>
         <div className={styles.inputBox}>
-          <input type="text" placeholder="Username" required />
+          <input type="text" placeholder="Email" required />
           <i className='bx bx-user'></i>
         </div>
         <div className={styles.inputBox}>
