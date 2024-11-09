@@ -1,15 +1,23 @@
 "use client";
 
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import styles from './LandingPage.module.css';
 
 
 const LandingPage = () => {
+    const router = useRouter()
+
     return (
         <div >
             <div className={styles.nav}>
                 <button className={styles.signUpBtn}>Sign Up</button>
-                <button className={styles.loginBtn}>Login</button>
+                <button 
+                    className={styles.loginBtn}
+                    type='button'
+                    onClick={() => router.push('/login')}>
+                    Login
+                </button>
             </div>
             <div className={styles.container}>
                 <h2>Welcome to</h2>
@@ -21,7 +29,11 @@ const LandingPage = () => {
                         !
                     </h3>
                 </div>
-                <button>Get Started</button>
+                <button
+                    type='button'
+                    onClick={() => router.push('/login')}>
+                    Get Started
+                </button>
             </div>
         </div>
     )

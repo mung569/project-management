@@ -1,9 +1,10 @@
-import Image from "next/image";
-import LoginPage from './components/LoginPage';
+import LandingPage from "./components/LandingPage";
+
 export default function Home() {
+
   return (
     <div>
-        <LoginPage />
+        <LandingPage />
     </div>
   );
 }
