@@ -1,14 +1,11 @@
-// components/LoginForm.tsx
-
 "use client";
 
 import React from 'react';
-import styles from './LoginPage.module.css'; // Use CSS modules
+import styles from './LoginPage.module.css'; 
 
 const LoginForm: React.FC = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Add login functionality here
   };
 
   return (
