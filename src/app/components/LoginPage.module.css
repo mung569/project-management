@@ -2,6 +2,7 @@
 
 .wrapper {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -9,33 +10,61 @@
 }
 
 .wrapper form {
-  background-color: #fff;
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 400px;
   text-align: center;
+  background:
+    linear-gradient(180deg,
+      rgba(0, 0, 0, 0.40) 78.66%, 
+      rgba(38, 38, 38, 0.40) 82.29%, 
+      rgba(75, 75, 75, 0.40) 85.91%, 
+      rgba(120, 120, 120, 0.40) 89.1%, 
+      rgba(143, 143, 143, 0.40) 92.98%, 
+      rgba(199, 199, 199, 0.40) 96.56%, 
+      rgba(255, 255, 255, 0.40) 99.92%);
+}
+
+.wrapper h1, .registerLink, .btn {
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  line-height: normal;
+  font-stretch: condensed;
+  text-align: center;
 }
 
 .wrapper h1 {
-  font-size: 24px;
-  color: #333;
+  font-size: 3em;
   margin-bottom: 1.5rem;
+}
+
+.login {
+  color: #FBC531;
+  font-weight: 600;
+}
+
+.welcome {
+  width: 8em;
+  color: #6C5F3A;
+  font-weight: 800;
 }
 
 .inputBox {
   position: relative;
   margin-bottom: 1.5rem;
+  
 }
 
 .inputBox input {
   width: 100%;
   padding: 10px;
-  padding-left: 40px;
+  padding-left: 1em;
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 16px;
+  background: #FEF1CB;
 }
 
 .inputBox i {
@@ -49,4 +78,32 @@
 .rememberForgot {
   display: flex;
   justify-content: space-between;
+}
+
+.registerLink {
+  color: #000;
+  font-size: 1.1em;
+  font-weight: 800;
+  margin-top: 1em;
+  }
+
+.registerLink a{
+  color: #3167FB;
+  text-decoration-line: underline;
+}
+
+.rememberForgot a {
+  color: #b4e7ff;
+  text-decoration-line: underline;
+}
+
+.btn {
+  width: 5em;
+  height: 1.7em;
+  flex-shrink: 0;
+  background-color: #FBC531;
+  border-radius: 60;
+  font-weight: bold;
+  margin-top: 1em;
+  font-size: 1.5em;
 }

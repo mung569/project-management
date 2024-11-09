@@ -13,8 +13,9 @@ const LoginForm: React.FC = () => {
 
   return (
     <div className={styles.wrapper}>
+      <h1 className={styles.welcome}>Welcome Back To Swift</h1>
       <form onSubmit={handleSubmit}>
-        <h1>Login</h1>
+        <h1 className={styles.login}>Login</h1>
         <div className={styles.inputBox}>
           <input type="text" placeholder="Username" required />
           <i className='bx bx-user'></i>
@@ -30,10 +31,10 @@ const LoginForm: React.FC = () => {
           <a href="#">Forgot password?</a>
         </div>
         <button type="submit" className={styles.btn}>Login</button>
-        <div className={styles.registerLink}>
+      </form>
+      <div className={styles.registerLink}>
           <p>Don't have an account? <a href="#">Register</a></p>
         </div>
-      </form>
     </div>
   );
 };
