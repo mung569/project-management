@@ -16,8 +16,11 @@
   width: 100%;
   max-width: 400px;
   text-align: center;
+  background-color: black;
+
   background:
     linear-gradient(180deg,
+      rgba(0, 0, 0, 0.70) 100%,
       rgba(0, 0, 0, 0.40) 78.66%, 
       rgba(38, 38, 38, 0.40) 82.29%, 
       rgba(75, 75, 75, 0.40) 85.91%, 
@@ -78,6 +81,7 @@
 .rememberForgot {
   display: flex;
   justify-content: space-between;
+  color: white;
 }
 
 .registerLink {
