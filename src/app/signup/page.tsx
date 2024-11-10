@@ -2,6 +2,7 @@
 
 import React from 'react';
 import styles from './Signup.module.css'; 
+import Link from 'next/link';
 
 const LoginForm: React.FC = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -37,7 +38,7 @@ const LoginForm: React.FC = () => {
         <button type="submit" className={styles.btn}>Register</button>
       </form>
       <div className={styles.registerLink}>
-          <p>Already have an account? <a href="#">Log In</a></p>
+          <p>Already have an account? <Link href="/login">Log In</Link></p>
         </div>
     </div>
   );
