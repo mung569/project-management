@@ -11,7 +11,12 @@ const LandingPage = () => {
     return (
         <div >
             <div className={styles.nav}>
-                <button className={styles.signUpBtn}>Sign Up</button>
+                <button 
+                    className={styles.signUpBtn}
+                    type='button'
+                    onClick={() => router.push('/signup')}>
+                    Sign Up
+                </button>
                 <button 
                     className={styles.loginBtn}
                     type='button'
@@ -31,7 +36,7 @@ const LandingPage = () => {
                 </div>
                 <button
                     type='button'
-                    onClick={() => router.push('/login')}>
+                    onClick={() => router.push('/signup')}>
                     Get Started
                 </button>
             </div>
