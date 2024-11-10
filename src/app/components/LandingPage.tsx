@@ -4,12 +4,11 @@ import React from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './LandingPage.module.css';
 
-
 const LandingPage = () => {
-    const router = useRouter()
+    const router = useRouter();
 
     return (
-        <div >
+        <div>
             <div className={styles.nav}>
                 <button 
                     className={styles.signUpBtn}
@@ -39,10 +38,16 @@ const LandingPage = () => {
                     onClick={() => router.push('/signup')}>
                     Get Started
                 </button>
+                {/* New To-Do Page button */}
+                <button
+                    className={styles.toDoBtn}  // Add this style in your CSS file
+                    type='button'
+                    onClick={() => router.push('/todo')}>
+                    Go to To-Do Page
+                </button>
             </div>
         </div>
-    )
-}
-
+    );
+};
 
 export default LandingPage;

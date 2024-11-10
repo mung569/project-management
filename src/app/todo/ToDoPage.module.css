@@ -1,0 +1,129 @@
+.container {
+  display: flex;
+  background-color: #2C2C2C;
+  color: #FFF;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #1F1F1F;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h2 {
+  color: white;
+    font-size: 2em;
+
+}
+
+.date {
+  color: #32CD32;
+  font-size: 2em;
+}
+
+.navItem {
+  margin-bottom: 20px;
+  padding: 10px;
+  color: #FFF;
+  cursor: pointer;
+}
+
+.navItem:hover {
+  background-color: #333;
+  border-radius: 4px;
+}
+
+.addList {
+  color: #32CD32;
+  margin-top: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  left: 60px;
+
+}
+
+.mainContent {
+  flex: 1;
+  padding: 40px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 24px;
+}
+
+.taskInput {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.taskInput input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #555;
+  background: #4B4B4B;
+  color: #FFF;
+}
+
+.detailsButton {
+  background-color: #ccc;
+  padding: 10px 16px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  color: #000;
+}
+
+.taskList {
+  list-style: none;
+  padding: 0;
+}
+
+.taskItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #444;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  color: #FFF;
+}
+
+.taskItem.completed span {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.dueDate {
+  font-size: 0.9em;
+  color: #bbb;
+}
+
+.logoutButton {
+  background-color: #FFD700;
+  color: #000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}

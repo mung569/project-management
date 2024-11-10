@@ -90,4 +90,15 @@
   display: inline-block;
 }
 
+/* LandingPage.module.css */
 
+.toDoBtn {
+  margin-top: 1em;
+  padding: 10px 20px;
+  background-color: #FBC531;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
