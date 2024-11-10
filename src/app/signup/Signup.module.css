@@ -1,0 +1,113 @@
+/* Signup.module.css */
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+  }
+  
+  .wrapper form {
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    background-color: #4B4B4B;
+  }
+  
+  
+  .wrapper h1, .registerLink, .btn {
+    font-family: "Roboto", sans-serif;
+    font-style: italic;
+    line-height: normal;
+    font-stretch: condensed;
+    text-align: center;
+  }
+  
+  .wrapper h1 {
+    font-size: 3em;
+    margin-bottom: 1.5rem;
+  }
+  
+  .signup {
+    font-family: "Roboto", sans-serif;
+    line-height: normal;
+    font-stretch: condensed;
+    text-align: center;
+    color: #FBC531;
+    font-weight: 600;
+  }
+  
+  .register {
+    color: #6C5F3A;
+    font-weight: 800;
+  }
+  
+  .wrapper label {
+    color: white;
+    font-size: 1.1em;
+  }
+
+  .inputBox {
+    position: relative;
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+  
+  .inputBox input {
+    margin-top: 0.3em;
+    width: 100%;
+    padding: 10px;
+    padding-left: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    background: #FEF1CB;
+  }
+  
+  .inputBox i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+  }
+  
+  .rememberForgot {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+  }
+  
+  .registerLink {
+    color: #000;
+    font-size: 1.1em;
+    font-weight: 800;
+    margin-top: 1em;
+    }
+  
+  .registerLink a{
+    color: #3167FB;
+    text-decoration-line: underline;
+  }
+  
+  .rememberForgot a {
+    color: #b4e7ff;
+    text-decoration-line: underline;
+  }
+  
+  .btn {
+    width: 5em;
+    height: 1.7em;
+    flex-shrink: 0;
+    background-color: #FBC531;
+    border-radius: 60;
+    font-weight: bold;
+    margin-top: 0.5em;
+    font-size: 1.5em;
+  }
+  
