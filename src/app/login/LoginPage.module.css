@@ -16,18 +16,7 @@
   width: 100%;
   max-width: 400px;
   text-align: center;
-  background-color: black;
-
-  background:
-    linear-gradient(180deg,
-      rgba(0, 0, 0, 0.70) 100%,
-      rgba(0, 0, 0, 0.40) 78.66%, 
-      rgba(38, 38, 38, 0.40) 82.29%, 
-      rgba(75, 75, 75, 0.40) 85.91%, 
-      rgba(120, 120, 120, 0.40) 89.1%, 
-      rgba(143, 143, 143, 0.40) 92.98%, 
-      rgba(199, 199, 199, 0.40) 96.56%, 
-      rgba(255, 255, 255, 0.40) 99.92%);
+  background-color: #4B4B4B;
 }
 
 .wrapper h1, .registerLink, .btn {
