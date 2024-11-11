@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import TaskModal from '../components/TaskModal';
 import NavBar from '../components/NavBar';
 import styles from './ToDoPage.module.css';
+import { useRouter } from 'next/navigation';
 
 interface Task {
   text: string;
@@ -13,6 +14,8 @@ interface Task {
 }
 
 const ToDoPage: React.FC = () => {
+  const router = useRouter();
+  
   const initialLists = {
     "To-do": [
       { text: 'Submit draft', dueDate: 'Today', completed: true },
@@ -155,7 +158,11 @@ const ToDoPage: React.FC = () => {
               </li>
             ))}
           </ul>
-          <button className={styles.logoutButton}>Log Out</button>
+          <button type='button'
+            className={styles.logoutButton}
+            onClick={() => router.push('/login')}>
+             Log Out
+          </button>
         </div>
       </div>
 
