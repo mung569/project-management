@@ -44,6 +44,8 @@ const Calendar: React.FC = () => {
     const month = currentDate.getMonth(); // 0-indexed (0 = January, 11 = December)
     const weeks = generateCalendar(year, month);
 
+    const currentDay = new Date().getDate(); // Get today's date
+
     // Handlers
     const handlePrevMonth = () => {
         setCurrentDate(new Date(year, month - 1, 1));
@@ -63,21 +65,32 @@ const Calendar: React.FC = () => {
       <NavBar />
       <div className={styles.contentContainer}>
         <div className={styles.sidebar}>
+          <div className={styles.monthChangers}>
+            <button onClick={handlePrevMonth}>{`<`}</button>
+            <button onClick={handleNextMonth}>{`>`}</button>
+          </div>
             <MiniCalendar date={currentDate}/>
+            
+            <button type='button'
+              className={styles.logoutButton}
+              onClick={() => router.push('/login')}>
+                Log Out
+          </button>
         </div>
 
         {/* Main content */}
         <div className={styles.calendar}>
-            <div className={styles.calendarHeader}>
-                <button onClick={handlePrevMonth}>Prev</button>
-                <h2>{`${currentDate.toLocaleString('default', { month: 'long' })} ${year}`}</h2>
-                <button onClick={handleNextMonth}>Next</button>
+            <div className={styles.calendarNav}>
+                <button>Day</button>
+                <button>Week</button>
+                <button className={styles.monthButton}>Month</button>
+                <button>Year</button>
             </div>
             <div className={styles.calendarBody}>
                 <div className={styles.weekdays}>
                     {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (
                         <div key={day} className={styles.weekday}>
-                        {day}
+                            {day}
                         </div>
                     ))}
                 </div>
@@ -85,26 +98,26 @@ const Calendar: React.FC = () => {
                 <div className={styles.days}>
                     {weeks.map((week, weekIndex) => (
                         <div key={weekIndex} className={styles.week}>
-                        {week.map((day, dayIndex) => (
-                            <button
-                            key={dayIndex}
-                            className={`day ${day ? 'active' : ''} ${selectedDay === day ? 'selected' : ''}`}
-                            onClick={() => handleDayClick(day)}
-                            >
-                            {day || ''}
-                            </button>
-                        ))}
+                            {week.map((day, dayIndex) => {
+                                const isToday = day === currentDay && month === new Date().getMonth() && year === new Date().getFullYear();
+                                return (
+                                    <button
+                                        key={dayIndex}
+                                        className={`${styles.day} ${day ? styles.active : ''} ${selectedDay === day ? styles.selected : ''} ${isToday ? styles.today : ''}`}
+                                        onClick={() => handleDayClick(day)}
+                                        disabled={true}
+                                    >
+                                        {day || ''}
+                                    </button>
+                                );
+                            })}
                         </div>
                     ))}
                 </div>
             </div>
         </div>
 
-          <button type='button'
-            className={styles.logoutButton}
-            onClick={() => router.push('/login')}>
-             Log Out
-          </button>
+          
         </div>
         </div>
 );
