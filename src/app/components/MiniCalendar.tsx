@@ -8,7 +8,7 @@ type MiniCalendarProps = {
 }
 
 // Helper function to generate the days of the month
-const generateCalendar = (year, month) => {
+const generateCalendar = (year: number, month: number) => {
   const date = new Date(year, month, 1);
   const daysInMonth = new Date(year, month + 1, 0).getDate();
   const firstDay = date.getDay(); // The day of the week the month starts on
@@ -27,8 +27,11 @@ const generateCalendar = (year, month) => {
     }
   }
 
-  if (days.length > 0) {
-    weeks.push(days); // Add remaining days in the last week
+  if (days.length > 0 && days.length < 7) {
+    while (days.length < 7) {
+      days.push(null); // Fill the remaining days with null
+    }
+    weeks.push(days);
   }
 
   return weeks;
@@ -44,57 +47,58 @@ const MiniCalendar: React.FC<MiniCalendarProps> = ({ date }) => {
     const month = currentDate.getMonth(); // 0-indexed (0 = January, 11 = December)
     const weeks = generateCalendar(year, month);
 
+    const currentDay = new Date().getDate(); // Get today's date
+
     // Handlers
-    const handlePrevMonth = () => {
-        setCurrentDate(new Date(year, month - 1, 1));
-    };
-
-    const handleNextMonth = () => {
-        setCurrentDate(new Date(year, month + 1, 1));
-    };
-
     const handleDayClick = (day: number) => {
         setSelectedDay(day);
     };
 
     useEffect(() => {
-        // Sync the mini calendar when the `date` prop changes
+        // Sync mini calendar when `date` prop changes
         setCurrentDate(date);
-      }, [date]);
+    }, [date]);
 
     return (
         <div className={styles.calendar}>
-        <div className={styles.calendarHeader}>
-            <h2>{`${currentDate.toLocaleString('default', { month: 'long' })} ${year}`}</h2>
-        </div>
-        <div className={styles.calendarBody}>
-            <div className={styles.weekdays}>
-                {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (
-                    <div key={day} className={styles.weekday}>
-                    {day}
-                    </div>
-                ))}
+            <div className={styles.calendarHeader}>
+                <h2>
+                    {`${currentDate.toLocaleString('default', { month: 'long' })}`}&nbsp;
+                    <div className={styles.year}>{year}</div>
+                </h2>
             </div>
 
-            <div className={styles.days}>
-                {weeks.map((week, weekIndex) => (
-                    <div key={weekIndex} className={styles.week}>
-                    {week.map((day, dayIndex) => (
-                        <button
-                        key={dayIndex}
-                        className={`day ${day ? 'active' : ''} ${selectedDay === day ? 'selected' : ''}`}
-                        onClick={() => handleDayClick(day)}
-                        >
-                        {day || ''}
-                        </button>
+            <div className={styles.calendarBody}>
+                <div className={styles.weekdays}>
+                    {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (
+                        <div key={day} className={styles.weekday}>
+                            {day}
+                        </div>
                     ))}
-                    </div>
-                ))}
+                </div>
+
+                <div className={styles.days}>
+                    {weeks.map((week, weekIndex) => (
+                        <div key={weekIndex} className={styles.week}>
+                            {week.map((day, dayIndex) => {
+                                const isToday = day === currentDay && month === new Date().getMonth() && year === new Date().getFullYear();
+                                return (
+                                    <button
+                                        key={dayIndex}
+                                        className={`${styles.day} ${day ? styles.active : ''} ${selectedDay === day ? styles.selected : ''} ${isToday ? styles.today : ''}`}
+                                        onClick={() => handleDayClick(day)}
+                                        disabled={true}
+                                    >
+                                        {day || ''}
+                                    </button>
+                                );
+                            })}
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
-    </div>
-);
-  
+    );
 };
 
 export default MiniCalendar;
