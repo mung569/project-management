@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import TaskModal from '../components/TaskModal';
 import NavBar from '../components/NavBar';
 import styles from './ToDoPage.module.css';
+import { useRouter } from 'next/navigation';
 
 interface Task {
   text: string;
@@ -93,6 +94,8 @@ const ToDoPage: React.FC = () => {
     setLists({ ...lists, [selectedList]: updatedTasks });
   };
 
+  const router = useRouter();
+
   return (
     <div className={styles.pageContainer}>
       <NavBar /> {/* Navbar at the top */}
@@ -116,6 +119,7 @@ const ToDoPage: React.FC = () => {
               )}
             </div>
           ))}
+<<<<<<< HEAD
           <div className={styles.addList} onClick={() => setIsAddingList(true)}>+ New list</div>
           {isAddingList && (
             <div className={styles.newListInput}>
@@ -157,6 +161,14 @@ const ToDoPage: React.FC = () => {
           </ul>
           <button className={styles.logoutButton}>Log Out</button>
         </div>
+=======
+        </ul>
+        <button type='button'
+          className={styles.logoutButton}
+          onClick={() => router.push('/login')}>
+          Log Out
+        </button>
+>>>>>>> 10f13ee77debacece78a3b5dfa4b83f1b0e899f6
       </div>
 
       {/* Task Modal */}
