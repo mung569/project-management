@@ -9,7 +9,19 @@ const LandingPage = () => {
 
     return (
         <div>
-            <div className={styles.nav}>
+            <nav className={styles.nav}>
+                <button
+                    className={styles.altBtn} 
+                    type='button'
+                    onClick={() => router.push('/todo')}>
+                    Go to To-Do Page
+                </button>
+                <button
+                    className={styles.altBtn}
+                    type='button'
+                    onClick={() => router.push('/calendar')}>
+                    Go to Calendar
+                </button>
                 <button 
                     className={styles.signUpBtn}
                     type='button'
@@ -22,13 +34,7 @@ const LandingPage = () => {
                     onClick={() => router.push('/login')}>
                     Login
                 </button>
-                <button
-                    className={styles.toDoBtn}  // Add this style in your CSS file
-                    type='button'
-                    onClick={() => router.push('/todo')}>
-                    Go to To-Do Page
-                </button>
-            </div>
+            </nav>
             <div className={styles.container}>
                 <h2>Welcome to</h2>
                 <h1>SWIFT</h1>
@@ -44,7 +50,6 @@ const LandingPage = () => {
                     onClick={() => router.push('/signup')}>
                     Get Started
                 </button>
-                {/* New To-Do Page button */}
 
             </div>
         </div>
