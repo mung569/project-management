@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import styles from './ToDoPage.module.css';
+import { useRouter } from 'next/navigation';
 
 const ToDoPage: React.FC = () => {
   const [tasks, setTasks] = useState([
@@ -17,6 +18,8 @@ const ToDoPage: React.FC = () => {
     );
     setTasks(updatedTasks);
   };
+
+  const router = useRouter();
 
   return (
     <div className={styles.container}>
@@ -52,7 +55,11 @@ const ToDoPage: React.FC = () => {
             </li>
           ))}
         </ul>
-        <button className={styles.logoutButton}>Log Out</button>
+        <button type='button'
+          className={styles.logoutButton}
+          onClick={() => router.push('/login')}>
+          Log Out
+        </button>
       </div>
     </div>
   );
