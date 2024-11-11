@@ -1,0 +1,45 @@
+/* NavBar.module.css */
+
+.navBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2C2C2C;
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+  }
+  
+  .tabs {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .tab {
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #DDD;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .tab:hover {
+    background-color: #444;
+  }
+  
+  .tab:nth-child(1) {
+    color: #FF6B6B;
+  }
+  
+  .tab:nth-child(2) {
+    color: #FFD93D;
+  }
+  
+  .tab:nth-child(3) {
+    color: #32CD32;
+  }
+  
+  .tab:nth-child(4) {
+    color: #3DA5F5;
+  }
+  

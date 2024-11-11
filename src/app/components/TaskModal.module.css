@@ -1,0 +1,100 @@
+/* TaskModal.module.css */
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modalContent {
+    background: #4a4a4a;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    color: #fff;
+  }
+  
+  .modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .modalHeader h2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .closeButton {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .inputField, .textArea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: 1px solid #555;
+    background: #5a5a5a;
+    color: #fff;
+  }
+  
+  .dateTimeRow {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .textArea {
+    resize: none;
+    height: 80px;
+  }
+  
+  .addImageButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #3498db;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .modalButtons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .saveButton {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .cancelButton {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  

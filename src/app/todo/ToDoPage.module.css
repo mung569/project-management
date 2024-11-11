@@ -127,3 +127,136 @@
   bottom: 20px;
   right: 20px;
 }
+
+.navItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 10px;
+  color: #FFF;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.navItem span {
+  flex-grow: 1;
+}
+
+.navItem:hover {
+  background-color: #333;
+}
+
+.deleteButton {
+  background: none;
+  border: none;
+  color: #FF605C;
+  cursor: pointer;
+  font-size: 1em;
+  margin-left: 8px;
+}
+
+.addList {
+  color: #32CD32;
+  margin-top: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.newListInput {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.newListInput input {
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #555;
+  background: #4B4B4B;
+  color: #FFF;
+}
+
+.newListInput button {
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+  background-color: #32CD32;
+  color: #FFF;
+  cursor: pointer;
+}
+.taskItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #444;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  color: #FFF;
+}
+
+.taskItem.completed span {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.taskItem.completed input[type="checkbox"] {
+  border: none;
+  background-color: #32CD32; /* Green checkmark for completed tasks */
+}
+
+.taskItem input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  border: 2px solid white; /* White border for incomplete tasks */
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.taskItem.completed input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  background-color: #32CD32; /* Completed check mark */
+  border: 2px solid #32CD32; /* Green border for completed tasks */
+}
+/* ToDoPage.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #2C2C2C;
+  color: #FFF;
+  height: 100vh;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+}
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.contentContainer {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #1F1F1F;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+}

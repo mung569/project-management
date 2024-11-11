@@ -22,6 +22,12 @@ const LandingPage = () => {
                     onClick={() => router.push('/login')}>
                     Login
                 </button>
+                <button
+                    className={styles.toDoBtn}  // Add this style in your CSS file
+                    type='button'
+                    onClick={() => router.push('/todo')}>
+                    Go to To-Do Page
+                </button>
             </div>
             <div className={styles.container}>
                 <h2>Welcome to</h2>
@@ -39,12 +45,7 @@ const LandingPage = () => {
                     Get Started
                 </button>
                 {/* New To-Do Page button */}
-                <button
-                    className={styles.toDoBtn}  // Add this style in your CSS file
-                    type='button'
-                    onClick={() => router.push('/todo')}>
-                    Go to To-Do Page
-                </button>
+
             </div>
         </div>
     );
