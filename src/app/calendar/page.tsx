@@ -71,11 +71,11 @@ const Calendar: React.FC = () => {
           </div>
             <MiniCalendar date={currentDate}/>
             
-            <button type='button'
+{/*             <button type='button'
               className={styles.logoutButton}
               onClick={() => router.push('/login')}>
                 Log Out
-          </button>
+          </button> */}
         </div>
 
         {/* Main content */}
