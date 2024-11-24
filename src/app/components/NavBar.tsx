@@ -8,12 +8,16 @@ import { useRouter } from 'next/navigation';
 const NavBar: React.FC = () => {
   const router = useRouter();
 
+  const handleSignOut = () => {
+    localStorage.removeItem("isLoggedIn");
+    router.push("/");
+  };
+
   return (
     <div className={styles.navBar}>
       <div className={styles.tabs}>
-        <span className={styles.tab}
-          onClick={() => router.push('/')}>
-            Home
+      <span className={styles.tab} onClick={handleSignOut}>
+          Sign Out
         </span>
         <span className={styles.tab}
           onClick={() => router.push('/calendar')}>
