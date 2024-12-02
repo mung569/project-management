@@ -1,10 +1,10 @@
 "use client";
-"use client";
 
 import React, { useState } from "react";
 import TaskModal from "../components/TaskModal";
 import NavBar from "../components/NavBar";
 import styles from "./ToDoPage.module.css";
+import Calendar from "../calendar/page";
 import { useRouter } from "next/navigation";
 
 interface Task {
@@ -20,17 +20,17 @@ const ToDoPage: React.FC = () => {
 
   const initialLists = {
     "To-do": [
-      { text: "Submit draft", dueDate: "Today", completed: true },
-      { text: "Write follow-up email", dueDate: "Tomorrow", completed: false },
+      { text: "Submit draft", dueDate: "2024-12-2", completed: true },
+      { text: "Write follow-up email", dueDate: "2024-12-2", completed: false },
     ],
     Important: [
-      { text: "Prepare for meeting", dueDate: "Monday", completed: false },
+      { text: "Prepare for meeting", dueDate: "2024-12-4", completed: false },
     ],
     Assignments: [
-      { text: "Complete project report", dueDate: "Wednesday", completed: false },
-      { text: "Submit final assignment", dueDate: "Friday", completed: false },
+      { text: "Complete project report", dueDate: "2024-12-6", completed: false },
+      { text: "Submit final assignment", dueDate: "2024-12-8", completed: false },
     ],
-    Other: [{ text: "Plan weekend trip", dueDate: "Saturday", completed: false }],
+    Other: [{ text: "Plan weekend trip", dueDate: "2024-12-10", completed: false }],
   };
 
   const [lists, setLists] = useState<{ [key: string]: Task[] }>(initialLists);
@@ -238,6 +238,7 @@ const ToDoPage: React.FC = () => {
           task={taskToEdit} // Pass taskToEdit for editing
         />
       )}
+      <Calendar key={JSON.stringify(lists)} lists={lists} />
     </div>
   );
 };
