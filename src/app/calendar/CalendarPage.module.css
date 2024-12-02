@@ -184,3 +184,34 @@ background-color: #ffcc00; /* Highlight today with a yellow background */
   background-color: #DC2626;
   color: white;
 }
+
+.task {
+  color: rgb(21, 19, 19);
+}
+
+.day {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center;    /* Center items horizontally */
+  justify-content: flex-start; /* Align content to the top */
+  text-align: center;     /* Center align text */
+  padding: 10px;
+  width: 100%;            /* Adjust width as needed */
+  height: 100%;           /* Adjust height as needed */
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.day .task {
+  display: block; /* Ensure tasks stack vertically */
+  font-size: 0.8rem;
+  margin-top: 4px; /* Add space between tasks */
+  color: #555;
+}
+
+.nav {
+  background: rgb(184, 181, 181);
+  height: 25px;
+}
+
