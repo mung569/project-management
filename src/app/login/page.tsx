@@ -1,40 +1,44 @@
-"use client";
+'use client';
+
 import React from "react";
 import styles from "./LoginPage.module.css";
 import Link from "next/link";
 import { IoMdHome } from "react-icons/io";
-import { signIn } from "next-auth/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { doCredentialLogin } from "../api/auth";
+import { signIn, signOut } from "@/auth";
 
-  const handleGoogleSignIn = async () => {
-    await signIn("google", { callbackUrl: "/todo" });
-  };
 
-  export default function LoginForm() {
-    const [email, setEmail] = useState<string>("");
-    const [password, setPassword] = useState<string>("");
-    const [error, setError] = useState<string>("");
-    const router = useRouter();
 
-    const handleLogin = (e: React.FormEvent) => {
-        e.preventDefault();
+export default function LoginForm() {
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [error, setError] = useState<string>("");
+  const router = useRouter();
 
-        const users = JSON.parse(localStorage.getItem("users") || "[]");
-
-        const user = users.find(
-          (user: any) => user.email === email && user.password === password
-        );
-
-        if (user) {
-          // Successful login
-          localStorage.setItem("isLoggedIn", "true");
-          router.push("/todo");
+  
+  const handleLogin = async (e: React.FormEvent) => {
+      e.preventDefault();
+      // Collect form data
+      const formData = new FormData();
+      formData.append("email", email);
+      formData.append("password", password);
+  
+      
+      try {
+        const response = await doCredentialLogin(formData);
+        if (response?.error) {
+          setError(response.error.message); // Handle login error
         } else {
-          // Invalid credentials
-          setError("Invalid email or password");
-        }     
-    };
+          // Redirect or update state for successful login
+          router.push("/todo");
+        }
+      } catch (err: any) {
+        alert("Invalid credentials. Please try again.")
+      } 
+        
+  };
 
   return (
     <div>

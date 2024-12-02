@@ -17,9 +17,11 @@ export default function SignupForm({ onSignup }: SignupFormProps) {
 
   const router = useRouter();
 
-    const handleSignup = (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault(); 
+    const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
 
+      // Local storage method
+      /*
       const users = JSON.parse(localStorage.getItem("users") || "[]");
 
       const userExists = users.some((user: any) => user.username === username);
@@ -30,8 +32,31 @@ export default function SignupForm({ onSignup }: SignupFormProps) {
 
       users.push({ email, username, password });
       localStorage.setItem("users", JSON.stringify(users));
+      */
 
-      router.push("/"); 
+      try {
+        // Send POST request to backend for registration
+        const response = await fetch('/api/users', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email, username, password }),
+        });
+  
+        const data = await response.json();
+  
+        if (!response.ok) {
+          throw new Error(data.message || 'Something went wrong');
+        }
+
+  
+        // Redirect to login page
+        router.push('/login');
+        //router.push('/');
+      } catch (err: any) {
+        alert('Failed to register. Please try again.');
+      }
 };
 
   return (
