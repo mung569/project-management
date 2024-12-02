@@ -261,3 +261,46 @@
   overflow-y: auto;
   color: white;
 }
+
+.imageUploadSection {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+.addImageButton {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
+}
+
+.imagePreview {
+  margin-top: 10px;
+  position: relative;
+}
+
+.previewImage {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.removeImageButton {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: #ff605c;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 12px;
+}
