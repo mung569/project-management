@@ -36,10 +36,29 @@ const TaskModal: React.FC<TaskModalProps> = ({ onClose, onSave, task }) => {
     }
   };
 
-  const handleSave = () => {
+  const handleSave = async () => {
     if (taskText.trim()) {
       onSave(taskText, dueDate || "No date", time, notes, image);
       onClose();
+    }
+
+    try {
+      // Send POST request to backend for registration
+      const response = await fetch('/api/items', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ text: taskText, dueDate, time, notes, image }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Something went wrong');
+      }
+    } catch (err: any) {
+      alert('Failed to add task. Please try again.');
     }
   };
 
