@@ -19,10 +19,12 @@ const NavBar: React.FC = () => {
       <span className={styles.tab} onClick={handleSignOut}>
           Sign Out
         </span>
+        {/*
         <span className={styles.tab}
           onClick={() => router.push('/calendar')}>
             Calendar
         </span>
+        */}
         <span className={styles.tab}
           onClick={() => router.push('/todo')}>
             Agenda

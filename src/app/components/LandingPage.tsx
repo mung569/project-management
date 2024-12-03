@@ -16,12 +16,14 @@ const LandingPage = () => {
                     onClick={() => router.push('/todo')}>
                     Go to To-Do Page
                 </button>
+                {/*
                 <button
                     className={styles.altBtn}
                     type='button'
                     onClick={() => router.push('/calendar')}>
                     Go to Calendar
                 </button>
+                */}
                 <button 
                     className={styles.signUpBtn}
                     type='button'
